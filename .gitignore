@@ -1,0 +1,8 @@
+.DS_Store
+.com.apple.timemachine*
+.env
+node_modules
+npm-debug*.log*
+src/firefox
+src/greenworks
+tmp/

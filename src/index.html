@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Moonrise</title>
+    <style>
+      .logs {
+        border: 1px dashed #ddd;
+        margin-top: 15px;
+        padding: 5px;
+        width: 70%;
+      }
+
+      .logs:empty {
+        display: none;
+      }
+    </style>
+    <script src="main.js"></script>
+  </head>
+  <body>
+    <h1>Moonrise</h1>
+    <dl>
+      <dt>NW.js version</dt>
+      <dd><script>document.write(process.versions['node-webkit']);</script></dd>
+      <dt>NW.js architecture</dt>
+      <dd><script>document.write(process.arch);</script></dd>
+      <dt>Node.js version</dt>
+      <dd><script>document.write(process.version);</script></dd>
+      <dt>Greenworks.js version</dt>
+      <dd>
+        <script>
+          // console.log('[index] loaded');
+          // var greenworks = require('./greenworks.js');
+          // console.log('[index] greenworks', greenworks);
+          // document.write(process.versions['greenworks']);
+        </script>
+      </dd>
+    </dl>
+    <div id="logs" class="logs"></div>
+    <canvas id="force-refresh" class="force-refresh" width="1" height="1"></canvas>
+  </body>
+</html>

@@ -1,0 +1,66 @@
+{
+  "name": "moonrise",
+  "description": "The next-generation WebVR browser.",
+  "version": "1.0.0",
+  "author": "Chris Van Wiemeersch <hearcomestreble@gmail.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/webvrrocks/moonrise.git"
+  },
+  "main": "index.html",
+  "dependencies": {
+    "cross-env": "^3.1.4",
+    "dotenv": "^4.0.0",
+    "greenworks": "^0.1.0",
+    "steam-user": "^3.19.1"
+  },
+  "devDependencies": {
+    "nodemon": "^1.11.0",
+    "nw-builder": "^3.2.0",
+    "nwjs-builder": "^1.14.0"
+  },
+  "scripts": {
+    "start": "npm run dev",
+    "dev": "cross-env NODE_ENV='development' nwb nwbuild --run --win-ico src/icon.ico --mac-icns src/icon.icns src/",
+    "build": "nwb nwbuild --platforms win64 --win-ico src/icon.ico --mac-icns src/icon.icns src/"
+  },
+  "keywords": [
+    "moonrise",
+    "webvr",
+    "vr",
+    "virtualreality",
+    "virtual-reality",
+    "webgl",
+    "canvas",
+    "firefox",
+    "browser",
+    "steam",
+    "itch",
+    "games",
+    "game",
+    "gaming",
+    "social",
+    "multiplayer",
+    "multi-player",
+    "multiuser",
+    "multi-user",
+    "services",
+    "web",
+    "launcher",
+    "pwa",
+    "webapp",
+    "webapps",
+    "desktop",
+    "windows",
+    "vive",
+    "htc-vive",
+    "htcvive",
+    "rift",
+    "oculus-rift",
+    "oculusrift",
+    "oculus",
+    "oculus-touch",
+    "oculustouch"
+  ]
+}
