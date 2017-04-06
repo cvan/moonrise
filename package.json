@@ -46,6 +46,7 @@
     "babel-preset-react": "^6.16.0",
     "devtron": "^1.4.0",
     "electron": "^1.4.13",
+    "electron-builder": "^16.6.1",
     "electron-connect": "^0.6.1",
     "electron-packager": "^8.4.0",
     "eslint": "^3.12.2",
@@ -78,11 +79,14 @@
     "lint": "eslint --ignore-path .gitignore .",
     "lint-fix": "eslint --ignore-path .gitignore . --fix",
     "watch": "gulp watch",
-    "prerelease": "npm run package",
-    "release": "release-it",
+    "release": "build --publish never",
+    "release-patch": "npm run release-win32 -- --increment patch",
     "release-major": "npm run release -- --increment major",
     "release-minor": "npm run release -- --increment minor",
-    "release-patch": "npm run release -- --increment patch",
+    "release-win32": "build --ia32 --publish never",
+    "release-win32-patch": "npm run release-win32 -- --increment patch",
+    "release-win32-major": "npm run release-win32 -- --increment major",
+    "release-win32-minor": "npm run release-win32 -- --increment minor",
     "package": "npm run package-mac && npm run package-win",
     "prepackage-mac": "npm run qbrt-build && npm run build",
     "package-mac": "node ./scripts/package.js",
@@ -129,5 +133,31 @@
     "oculus",
     "oculus-touch",
     "oculustouch"
-  ]
+  ],
+  "build": {
+    "appId": "org.webvrrocks.moonrise",
+    "win": {
+      "target": [
+        "nsis"
+      ],
+      "icon": "resources/icon.ico"
+    },
+    "nsis": {
+      "oneClick": true,
+      "installerHeaderIcon": "resources/icon.ico"
+    },
+    "mac": {
+      "icon": "resources/icon.icns"
+    },
+    "dmg": {
+      "icon": "resources/icon.icns"
+    },
+    "linux": {
+      "icon": "resources/icon.icns"
+    },
+    "directories": {
+      "buildResources": "resources",
+      "output": "releases"
+    }
+  }
 }
